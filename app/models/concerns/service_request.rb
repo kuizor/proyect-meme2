@@ -60,24 +60,4 @@ module ServiceRequest
 		storage.root.upload(@comp)
 		puts storage.public_url
 	end
-
-			#App-key 	ahoc4otwt91anyb
-			#App-secret 	ji24wprni9m1zxd
-
-			#token 		dt3Jg8D-FuAAAAAAAAAABuH6p0E6WYDqqiwFs3_bGfkbhUaLlIOclGlvWAXMfOo5
-	#def dropbox
-	#	APP_KEY = 'ahoc4otwt91anyb'
-	#	APP_SECRET = 'ji24wprni9m1zxd'
-
-	#	flow = DropboxOAuth2FlowNoRedirect.new(APP_KEY, APP_SECRET)
-	#	authorize_url = flow.start()
-
-	#	puts '1. Go to: ' + authorize_url
-	#	puts '2. Click "Allow" (you might have to log in first)'
-	#	puts '3. Copy the authorization code'
-	#	print 'Enter the authorization code here: '
-	#	code = gets.strip
-		
-	#	access_token, user_id = flow.finish(code)
-	#end
 end
