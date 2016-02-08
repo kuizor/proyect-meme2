@@ -1,3 +1,4 @@
+require 'rest-client'
 class EmailsController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :r_not_found
 	def index
