@@ -1,7 +1,7 @@
 require 'json'
 require 'net/http'
 #require 'rmega'
-require 'rest-client'
+require 'rubygems'
 
 module ServiceRequest
 	extend ActiveSupport::Concerns
@@ -43,17 +43,16 @@ module ServiceRequest
 		  @link = create_response['Location']
 		  #@link = URI(create_response['Location'])
 		end
-		puts @link
-		name = @link.slice(43..50)
-		@link << ".jpg"
+		#name = @link.slice(43..50)
+		#@link << ".jpg"
 		sleep 10
-		rest = RestClient.get @link
-		@comp = name+'.jpg'
-		open(@comp, 'wb') do |file|							#Aqui creamos el archivo
-			file.write(rest.body)
-		end
+		#rest = RestClient.get @link
+		#@comp = name+'.jpg'
+		#open(@comp, 'wb') do |file|							#Aqui creamos el archivo
+		#	file.write(rest.body)
+		#end
 		#upload
-		@link
+		return @link
 	end
 	def upload
 		storage = Rmega.login("kuizor@gmail.com", "miguelhack123")

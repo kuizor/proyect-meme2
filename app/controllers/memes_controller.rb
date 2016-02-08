@@ -1,5 +1,5 @@
 class MemesController < ApplicationController
-	before_action :authenticate, except: [:index]
+	before_action :authenticate, except: [:index,:create]
 	
 	def index
 		if (request.headers['Authorization']==nil)
@@ -20,6 +20,13 @@ class MemesController < ApplicationController
 
 	def create
 		meme = Meme.new(permit_params)
+		if(request.headers["Autorization"]==nil)
+			meme.type_meme ="PUBLIC"
+		else
+			token = request.headers["Authorization"]
+			user = User.find_by(token: token)
+			meme.user_id = user
+		end
 		if meme.save
 			render json:{link: "#{meme.link}"}
 		else
