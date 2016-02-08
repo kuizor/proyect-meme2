@@ -14,11 +14,38 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+
+
+#Host
+#ec2-54-225-199-245.compute-1.amazonaws.com
+#Database
+#d85vd32n6pbnpc
+#User
+#igfqvibjbfhokt
+#Port
+#5432
+#password
+#L_sZnwjFTp5-FT0X7GjP28ZYmN
+#=====================================
 default: &default
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  host: ec2-54-225-199-245.compute-1.amazonaws.com
+  username: igfqvibjbfhokt
+  password: L_sZnwjFTp5-FT0X7GjP28ZYmN
+
+development:
+  <<: *default
+  database: d85vd32n6pbnpc
+#======================================
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
   pool: 5
   host: localhost
   username: pmeme
@@ -27,6 +54,9 @@ default: &default
 development:
   <<: *default
   database: proyect-meme_development
+
+
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
