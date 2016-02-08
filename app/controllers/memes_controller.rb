@@ -74,4 +74,3 @@ class MemesController < ApplicationController
 		render json: {error: error.message}, status: :not_found
 	end
 end
-

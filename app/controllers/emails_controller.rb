@@ -1,14 +1,12 @@
 class EmailsController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :r_not_found
-	#rescue_from ActionController::ParameterMissing, with: :params_message 
-	
 	def index
 		e = Email.all
 		render json:e
 	end
 
 	def create
-		puts "Parametros-->#{params}"
+		#puts "Parametros-->#{params}"
 		
 		e = Email.new(permit_params)
 		if e.save

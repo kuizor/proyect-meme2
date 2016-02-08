@@ -42,18 +42,18 @@ development:
   database: d85vd32n6pbnpc
 #======================================
 
-default: &default
-  adapter: postgresql
-  encoding: unicode
+#default: &default
+#  adapter: postgresql
+#  encoding: unicode
 
-  pool: 5
-  host: localhost
-  username: pmeme
-  password: 12345678
+#  pool: 5
+#  host: localhost
+#  username: pmeme
+#  password: 12345678
 
-development:
-  <<: *default
-  database: proyect-meme_development
+#development:
+#  <<: *default
+#  database: proyect-meme_development
 
 
 

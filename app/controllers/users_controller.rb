@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :r_not_found
-	#rescue_from ActionController::ParameterMissing, with: :params_message 
-	before_action :require_login
+	before_action :authenticate, except: [:create]
 	def index
 		u = User.all
 		render json:u
@@ -40,7 +39,7 @@ class UsersController < ApplicationController
 	def permit_params
 		puts "--->",params
 		#params.fetch(:user,{}).permit(:login, :password, :type_user)
-		params.require(:user).permit(:login,:password, :type_user)
+		params.require(:user).permit(:login,:password)
 	end
 
 	def params_message(error)
